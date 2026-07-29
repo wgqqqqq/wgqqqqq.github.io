@@ -71,65 +71,60 @@
               <span class="fact-value"><a href="{{ about_url }}">{{ copy.about_more }}</a></span>
             </div>
           </div>
-        </aside>
 
-        <section class="work-block" aria-labelledby="work-title">
-          <div class="section-head section-head--split">
-            <div>
-              <p class="section-kicker">{{ copy.work_kicker }}</p>
-              <h2 id="work-title">{{ copy.work_title }}</h2>
-            </div>
-            <p class="section-note">{{ copy.work_note }}</p>
-          </div>
+          <section class="sidebar-block">
+            <p class="sidebar-kicker">{{ copy.sidebar_about_kicker }}</p>
+            <h3>{{ copy.sidebar_about_title }}</h3>
+            <p>{{ copy.sidebar_about_body }}</p>
+          </section>
 
-          <div class="work-grid">
-            {% for work in copy.work_items %}
-              <article class="work-card">
-                <div class="work-card__meta">
-                  <span>{{ work.role }}</span>
-                  <span>{{ work.period }}</span>
+          <section class="sidebar-block">
+            <p class="sidebar-kicker">{{ copy.sidebar_threads_kicker }}</p>
+            <h3>{{ copy.sidebar_threads_title }}</h3>
+            <ul class="sidebar-list">
+              {% for work in copy.work_items %}
+                <li>
+                  <strong>{{ work.title }}</strong>
+                  <span>{{ work.summary }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+
+          <section class="sidebar-block">
+            <p class="sidebar-kicker">{{ copy.sidebar_tags_kicker }}</p>
+            <h3>{{ copy.sidebar_tags_title }}</h3>
+            <ul class="tag-cloud">
+              {% for tag in profile.technical_focus %}
+                <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+
+          <section class="sidebar-block">
+            <p class="sidebar-kicker">{{ copy.sidebar_proof_kicker }}</p>
+            <h3>{{ copy.sidebar_proof_title }}</h3>
+            <p>{{ copy.proof_body }}</p>
+            <dl class="proof-metrics proof-metrics--compact">
+              {% for item in copy.proof_items %}
+                <div>
+                  <dt>{{ item.label }}</dt>
+                  <dd>{{ item.value }}</dd>
                 </div>
-                <h3>{{ work.title }}</h3>
-                <p>{{ work.summary }}</p>
-                {% if work.highlights %}
-                  <ul class="work-highlights">
-                    {% for highlight in work.highlights %}
-                      <li>{{ highlight }}</li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-                {% if work.tags %}
-                  <ul class="work-tags" aria-label="{{ work.title }} tags">
-                    {% for tag in work.tags %}
-                      <li>{{ tag }}</li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-                {% if work.links %}
-                  <div class="work-links">
-                    {% for link in work.links %}
-                      <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
-                    {% endfor %}
-                  </div>
-                {% endif %}
-              </article>
-            {% endfor %}
+              {% endfor %}
+            </dl>
+          </section>
 
-            <aside class="proof-card" aria-label="{{ copy.proof_kicker }}">
-              <p class="section-kicker">{{ copy.proof_kicker }}</p>
-              <h3>{{ copy.proof_title }}</h3>
-              <p>{{ copy.proof_body }}</p>
-              <dl class="proof-metrics">
-                {% for item in copy.proof_items %}
-                  <div>
-                    <dt>{{ item.label }}</dt>
-                    <dd>{{ item.value }}</dd>
-                  </div>
-                {% endfor %}
-              </dl>
-            </aside>
-          </div>
-        </section>
+          <section class="sidebar-block">
+            <p class="sidebar-kicker">{{ copy.sidebar_links_kicker }}</p>
+            <h3>{{ copy.sidebar_links_title }}</h3>
+            <ul class="sidebar-links">
+              <li><a href="{{ profile.contact.github.url }}" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://openbitfun.com/" target="_blank" rel="noopener">BitFun</a></li>
+              <li><a href="https://github.com/wgqqqqq/flashgrep" target="_blank" rel="noopener">flashgrep</a></li>
+            </ul>
+          </section>
+        </aside>
 
         <section class="feed-block" id="latest" aria-labelledby="latest-title">
           <div class="section-head">
@@ -162,21 +157,6 @@
               </article>
             {% endfor %}
           </div>
-        </section>
-
-        <section class="home-notes" aria-labelledby="notes-title">
-          <div class="section-head">
-            <p class="section-kicker">{{ copy.notes_kicker }}</p>
-            <h2 id="notes-title">{{ copy.notes_title }}</h2>
-          </div>
-          <ul class="topic-strip">
-            {% for item in copy.topics %}
-              <li>
-                <strong>{{ item.title }}</strong>
-                <span>{{ item.detail }}</span>
-              </li>
-            {% endfor %}
-          </ul>
         </section>
       </main>
 

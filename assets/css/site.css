@@ -140,11 +140,16 @@ a:hover {
 .home-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 292px;
+  grid-template-areas:
+    "intro sidebar"
+    "feed sidebar";
   gap: 56px;
   padding: 56px 0 80px;
+  align-items: start;
 }
 
 .home-intro {
+  grid-area: intro;
   padding-bottom: 44px;
   border-bottom: 1px solid var(--rule);
 }
@@ -184,14 +189,16 @@ p {
 }
 
 .home-sidebar {
+  grid-area: sidebar;
   align-self: start;
   padding: 22px 0 0;
+  display: grid;
+  gap: 18px;
 }
 
 .home-avatar {
   width: 96px;
   aspect-ratio: 1;
-  margin-bottom: 22px;
   border: 1px solid var(--rule);
   border-radius: 4px;
   object-fit: cover;
@@ -220,10 +227,92 @@ p {
   color: var(--ink);
 }
 
-.work-block,
-.feed-block,
+.sidebar-block {
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+
+.sidebar-block h3 {
+  margin: 8px 0 0;
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.16;
+  font-weight: 700;
+}
+
+.sidebar-block p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.sidebar-kicker {
+  margin: 0;
+  color: var(--accent-warm);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sidebar-list,
+.sidebar-links {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-list li {
+  padding: 12px 0 0;
+}
+
+.sidebar-list li + li {
+  margin-top: 12px;
+  border-top: 1px solid var(--rule);
+}
+
+.sidebar-list strong {
+  display: block;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sidebar-list span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-cloud li {
+  padding: 3px 7px;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.sidebar-links li + li {
+  margin-top: 8px;
+}
+
+.feed-block {
+  grid-area: feed;
+}
+
 .home-notes {
-  grid-column: 1 / -1;
+  grid-column: 1;
 }
 
 .section-head {
@@ -634,6 +723,10 @@ p {
 @media (max-width: 920px) {
   .home-layout {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "feed"
+      "sidebar";
     gap: 36px;
   }
 

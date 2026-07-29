@@ -51,8 +51,6 @@ zh:
           url: https://github.com/wgqqqqq/flashgrep
   latest_kicker: 最近写作
   latest_title: 最近文章与笔记
-  notes_kicker: 我关注的主题
-  notes_title: 我的技术定位
   page_kicker: 个人简介
   current_work: 当前主线
   current_work_value: BitFun + flashgrep
@@ -64,6 +62,17 @@ zh:
   contact_body: GitHub 是最直接的入口。
   back_home: 返回首页
   post_tags: 标签
+  sidebar_about_kicker: 关于我
+  sidebar_about_title: 本地优先的 agent 开发基础设施
+  sidebar_about_body: 我在做的是本地优先的 agent 开发基础设施：runtime、搜索、索引、workspace 状态和桌面工作流。
+  sidebar_threads_kicker: 当前主线
+  sidebar_threads_title: 两条主线
+  sidebar_tags_kicker: 重点标签
+  sidebar_tags_title: 技术标签
+  sidebar_proof_kicker: 证据
+  sidebar_proof_title: flashgrep 基准
+  sidebar_links_kicker: 链接
+  sidebar_links_title: 公开入口
   topics:
     - title: Agent runtime
       detail: 会话、工具、memory、状态和长任务执行要可见、可追踪、可恢复。
@@ -124,8 +133,6 @@ en:
           url: https://github.com/wgqqqqq/flashgrep
   latest_kicker: Latest writing
   latest_title: Recent posts and notes
-  notes_kicker: What I pay attention to
-  notes_title: Technical position
   page_kicker: Profile
   current_work: Current threads
   current_work_value: BitFun + flashgrep
@@ -137,6 +144,17 @@ en:
   contact_body: GitHub is the cleanest place to follow the work and start a conversation.
   back_home: Back to home
   post_tags: Tags
+  sidebar_about_kicker: About me
+  sidebar_about_title: Local-first infrastructure for agentic developer tools
+  sidebar_about_body: "I work on local-first infrastructure for agentic developer tools: runtime, search, indexing, workspace state, and desktop workflows."
+  sidebar_threads_kicker: Current threads
+  sidebar_threads_title: Two threads
+  sidebar_tags_kicker: Featured tags
+  sidebar_tags_title: Technical focus
+  sidebar_proof_kicker: Evidence
+  sidebar_proof_title: flashgrep benchmark
+  sidebar_links_kicker: Links
+  sidebar_links_title: Public entry points
   topics:
     - title: Agent runtime
       detail: "Sessions, tools, memory, state, and long-task execution should be visible, traceable, and recoverable."
