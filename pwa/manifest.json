@@ -1,18 +1,16 @@
 {
-  "name": "Hux Blog",
-  "short_name": "Hux Blog",
-  "description": "About an engineer & designer who loves web.",
-  "icons": [{
-    "src": "icons/128.png",
-    "sizes": "128x128",
-    "type": "image/png"
-  }, {
-    "src": "icons/512.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }],
-  "background_color": "#fff",
-  "theme_color": "#000",
+  "short_name": "Guanqi",
+  "name": "Guanqi | Agentic Software Builder",
+  "description": "Guanqi's personal homepage for agentic software, desktop AI tools, and public projects.",
+  "icons": [
+    {
+      "src": "/assets/images/guanqi.png",
+      "sizes": "420x420",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#f4f5f1",
+  "theme_color": "#f4f5f1",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"

@@ -1,4 +1,7 @@
 _site
+vendor
+.bundle
+Gemfile.lock
 _posts/_draft
 _posts/_archive
 _archive

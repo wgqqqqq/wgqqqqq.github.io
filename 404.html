@@ -1,16 +1,19 @@
 ---
-layout: default
-title: 404
-hide-in-nav: true
-description: "你来到了没有知识的荒原 :("
-header-img: "img/404-bg.jpg"
 permalink: /404.html
 ---
-
-
-<!-- Page Header -->
-{% include intro-header.html type="page" short='true' %}
-
-<script>
-	document.body.classList.add('page-fullscreen');
-</script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/portfolio.css">
+  </head>
+  <body>
+    <main class="plain-page">
+      <p class="section-kicker">404</p>
+      <h1>Page not found.</h1>
+      <p>The page is gone or the link is wrong. Return to <a href="{{ site.baseurl }}/">Guanqi's homepage</a>.</p>
+    </main>
+  </body>
+</html>
