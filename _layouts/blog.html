@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="{{ site.chrome-tab-theme-color | default: '#fbfbf8' }}">
+    {% if page.seo_title %}
+      <title>{{ page.seo_title }}</title>
+    {% elsif page.title %}
+      <title>{{ page.title }} | {{ site.title }}</title>
+    {% else %}
+      <title>{{ site.title }}</title>
+    {% endif %}
+    <meta name="description" content="{{ page.description | default: site.description | strip_html }}">
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/guanqi.png">
+    <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/site.css">
+  </head>
+  <body>
+    {% assign profile = site.data.profile %}
+
+    <div class="site-shell">
+      <header class="site-top">
+        <div class="site-brand">
+          <a class="site-brand__name" href="{{ site.baseurl }}/">Guanqi</a>
+          <p class="site-brand__tagline">{{ profile.tagline }}</p>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="{{ site.baseurl }}/about/">About me</a>
+          <a href="#latest">Latest notes</a>
+          <a href="{{ profile.contact.github.url }}" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </header>
+
+      <main class="home-layout">
+        <section class="home-intro" aria-labelledby="home-title">
+          <p class="home-kicker">Independent engineer</p>
+          <h1 id="home-title">Writing on agentic software and local-first tools.</h1>
+          <p class="home-lede">{{ profile.summary }}</p>
+        </section>
+
+        <aside class="home-sidebar" aria-label="Current work">
+          <img class="home-avatar" src="{{ site.baseurl }}/assets/images/guanqi.png" alt="Guanqi portrait">
+          <div class="home-facts">
+            <div>
+              <span class="fact-label">Current work</span>
+              <span class="fact-value">BitFun, Sparo OS</span>
+            </div>
+            <div>
+              <span class="fact-label">Focus</span>
+              <span class="fact-value">Agent runtimes, desktop AI, open systems</span>
+            </div>
+            <div>
+              <span class="fact-label">About</span>
+              <span class="fact-value"><a href="{{ site.baseurl }}/about/">Read more</a></span>
+            </div>
+          </div>
+        </aside>
+
+        <section class="feed-block" id="latest" aria-labelledby="latest-title">
+          <div class="section-head">
+            <p class="section-kicker">Latest writing</p>
+            <h2 id="latest-title">Recent posts and notes.</h2>
+          </div>
+
+          <div class="post-list">
+            {% for post in site.posts %}
+              <article class="post-row">
+                <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+                <div class="post-copy">
+                  <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+                  <p>{{ post.excerpt | strip_html | strip | truncate: 180 }}</p>
+                  {% if post.tags %}
+                    <ul class="post-tags" aria-label="{{ post.title }} tags">
+                      {% for tag in post.tags %}
+                        <li>{{ tag }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="home-notes" aria-labelledby="notes-title">
+          <div class="section-head">
+            <p class="section-kicker">What I pay attention to</p>
+            <h2 id="notes-title">Topics that shape the writing.</h2>
+          </div>
+          <ul class="topic-strip">
+            {% for item in profile.research_interests %}
+              <li>
+                <strong>{{ item.title }}</strong>
+                <span>{{ item.detail }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>{{ profile.name }}</span>
+        <span>{{ site.time | date: "%Y" }}</span>
+      </footer>
+    </div>
+  </body>
+</html>

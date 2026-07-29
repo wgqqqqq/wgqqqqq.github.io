@@ -1,6 +1,6 @@
-# Guanqi's Homepage
+# Guanqi's Blog
 
-This repository contains my personal GitHub Pages site.
+This repository contains my personal GitHub Pages blog.
 
 Build locally:
 
@@ -9,4 +9,4 @@ bundle install --path vendor/bundle
 bundle exec jekyll serve
 ```
 
-The homepage source lives in `index.html` and `_layouts/portfolio.html`.
+The homepage source lives in `index.html` and `_layouts/blog.html`.

@@ -1,31 +1,19 @@
 name: Guanqi
-initials: GQ
-handle: "@wgqqqqq"
-avatar: "/assets/images/guanqi.png"
-role: "Agentic software builder"
-description: "I build local-first tools that make AI useful inside real work."
-summary: "I am Guanqi, an engineer exploring the space between software tools and intelligent systems. Right now my public work is centered on BitFun and Sparo OS: desktop-first projects for agents, context, tools, and continuous work."
-availability: "Open to focused collaboration"
-primary_cta:
-  label: "View GitHub"
-  url: "https://github.com/wgqqqqq"
-secondary_cta:
-  label: "Read projects"
-  url: "#work"
-focus:
+title: "Independent engineer"
+tagline: "Agentic software systems, developer tooling, and local-first interfaces."
+summary: "I write about agentic software systems, developer tooling, and local-first interfaces."
+research_interests:
   - title: "Agent runtimes"
-    detail: "Sessions, tool calls, memory, MCP, and the runtime details that make agents useful beyond demos."
-    accent: "blue"
-  - title: "Desktop-first AI"
-    detail: "Interfaces where model behavior, local files, and developer workflows stay inspectable."
-    accent: "coral"
+    detail: "Sessions, tools, memory, and protocol boundaries that keep agents predictable."
+  - title: "Developer interfaces"
+    detail: "Desktop surfaces that expose state, logs, and context instead of flattening them."
   - title: "Open systems"
-    detail: "Small, composable surfaces that are easier to extend, debug, and share."
-    accent: "ink"
-projects:
+    detail: "Public components that are easier to extend, inspect, and recombine."
+selected_work:
   - title: "BitFun"
-    eyebrow: "Active contribution"
-    description: "A local Agent runtime and desktop suite for Code, Cowork, Computer Use, and personal assistant workflows."
+    period: "2026–present"
+    role: "Contributor"
+    summary: "A local Agent runtime and desktop suite for code, coworking, computer use, and assistant workflows."
     image: "/assets/images/bitfun.png"
     tags:
       - Rust
@@ -38,20 +26,21 @@ projects:
       - label: "Source"
         url: "https://github.com/GCWing/BitFun"
   - title: "Sparo OS"
-    eyebrow: "Agentic OS experiment"
-    description: "An operating-system direction for persistent agents, unified apps, remote control, and always-on workflows."
+    period: "2026–present"
+    role: "Contributor"
+    summary: "An agentic operating-system direction for persistent agents, unified apps, and always-on workflows."
     image: "/assets/images/sparo-os.png"
     tags:
       - Agent OS
       - Tauri
       - Rust
-      - Desktop
     links:
       - label: "Source"
         url: "https://github.com/GCWing/Sparo-Agentic-OS"
   - title: "Web Test"
-    eyebrow: "Personal web experiments"
-    description: "Small front-end experiments and homepage tests published through GitHub Pages."
+    period: "2025–present"
+    role: "Maintainer"
+    summary: "Small homepage experiments and interface tests published through GitHub Pages."
     image: ""
     tags:
       - TypeScript
@@ -62,7 +51,7 @@ projects:
         url: "https://wgqqqqq.github.io/web_test/"
       - label: "Source"
         url: "https://github.com/wgqqqqq/web_test"
-toolkit:
+technical_focus:
   - Rust
   - TypeScript
   - Tauri
@@ -71,3 +60,10 @@ toolkit:
   - LSP
   - Git
   - JavaScript
+contact:
+  github:
+    label: "GitHub"
+    url: "https://github.com/wgqqqqq"
+  web_test:
+    label: "Web Test"
+    url: "https://wgqqqqq.github.io/web_test/"
