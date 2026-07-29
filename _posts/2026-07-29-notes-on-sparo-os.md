@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: zh
-title: 关于 Sparo OS 的一点笔记
-description: 记录我对桌面级 agent 方向的理解。
-tags: [Sparo OS, desktop, systems]
+title: BitFun 里三个能力怎么分工
+description: 记录 Code Agent、Cowork Agent 和 Computer Use 在 BitFun 里的位置。
+tags: [BitFun, agents, desktop]
 ---
 
-Sparo OS 指向的是一个更大的问题：如果 agent 不只是活在聊天窗口里，而是长期存在于桌面环境中，它应该长什么样？
+在 BitFun 里，我更愿意把能力拆开看。
 
-我现在的判断是，它需要持久上下文、清晰的应用边界，以及在代码、协作和日常任务之间切换时不丢失线索的能力。
+Code Agent 负责仓库内部的编辑、计划、调试和测试；Cowork Agent 更像处理协作、文档和知识整理；Computer Use 则负责那些必须真的操作桌面的动作。
 
-这类问题不一定会被一个漂亮的聊天框解决，但很值得持续跟下去。
+这三个部分如果混在一起，系统会变得难以理解。拆开以后，BitFun 才更像一个可以持续扩展的 runtime，而不是一个什么都想做的壳。

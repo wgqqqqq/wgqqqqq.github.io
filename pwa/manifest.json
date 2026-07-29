@@ -1,7 +1,7 @@
 {
   "short_name": "Guanqi",
-  "name": "Guanqi | 笔记",
-  "description": "Guanqi 的个人博客，记录 agentic software、开发工具和本地优先界面的思考。",
+  "name": "Guanqi | BitFun 笔记",
+  "description": "Guanqi 的个人博客，主要记录 BitFun 相关的工作、判断和实现细节。",
   "icons": [
     {
       "src": "/assets/images/guanqi.png",

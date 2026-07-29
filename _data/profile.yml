@@ -1,19 +1,19 @@
 name: Guanqi
 title: "Independent engineer"
-tagline: "Agentic software systems, developer tooling, and local-first interfaces."
-summary: "I write about agentic software systems, developer tooling, and local-first interfaces."
+tagline: "BitFun, agent runtimes, and local-first interfaces."
+summary: "I write about BitFun, agent runtimes, and local-first interfaces."
 research_interests:
-  - title: "Agent runtimes"
-    detail: "Sessions, tools, memory, and protocol boundaries that keep agents predictable."
-  - title: "Developer interfaces"
-    detail: "Desktop surfaces that expose state, logs, and context instead of flattening them."
-  - title: "Open systems"
-    detail: "Public components that are easier to extend, inspect, and recombine."
+  - title: "Code Agent"
+    detail: "从真实仓库到可合并结果，关注 Plan、Debug、测试和长任务执行。"
+  - title: "Cowork / Office"
+    detail: "把调研、文档、PPT、会议纪要和日常办公流程接进同一个 runtime。"
+  - title: "Desktop runtime"
+    detail: "让 computer use、browser、filesystem 和 terminal 形成可持续的工作面。"
 selected_work:
   - title: "BitFun"
     period: "2026–present"
-    role: "Contributor"
-    summary: "A local Agent runtime and desktop suite for code, coworking, computer use, and assistant workflows."
+    role: "Current focus"
+    summary: "A desktop-grade Agent runtime and suite of desktop Agent apps with built-in Code Agent, Cowork Agent, and Computer Use."
     image: "/assets/images/bitfun.png"
     tags:
       - Rust
@@ -25,45 +25,16 @@ selected_work:
         url: "https://openbitfun.com/"
       - label: "Source"
         url: "https://github.com/GCWing/BitFun"
-  - title: "Sparo OS"
-    period: "2026–present"
-    role: "Contributor"
-    summary: "An agentic operating-system direction for persistent agents, unified apps, and always-on workflows."
-    image: "/assets/images/sparo-os.png"
-    tags:
-      - Agent OS
-      - Tauri
-      - Rust
-    links:
-      - label: "Source"
-        url: "https://github.com/GCWing/Sparo-Agentic-OS"
-  - title: "Web Test"
-    period: "2025–present"
-    role: "Maintainer"
-    summary: "Small homepage experiments and interface tests published through GitHub Pages."
-    image: ""
-    tags:
-      - TypeScript
-      - GitHub Pages
-      - UI
-    links:
-      - label: "Live"
-        url: "https://wgqqqqq.github.io/web_test/"
-      - label: "Source"
-        url: "https://github.com/wgqqqqq/web_test"
 technical_focus:
   - Rust
   - TypeScript
   - Tauri
   - AI agents
   - MCP
-  - LSP
+  - Computer Use
   - Git
   - JavaScript
 contact:
   github:
     label: "GitHub"
     url: "https://github.com/wgqqqqq"
-  web_test:
-    label: "Web Test"
-    url: "https://wgqqqqq.github.io/web_test/"

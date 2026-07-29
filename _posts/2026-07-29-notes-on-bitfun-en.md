@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: Notes on BitFun
-description: A short note on the kind of agent runtime I am interested in.
-tags: [BitFun, agents, tools]
+title: What I care about in BitFun
+description: The runtime traits I care about most in BitFun.
+tags: [BitFun, runtime, tools]
 permalink: /en/notes/notes-on-bitfun/
 ---
 
 BitFun is interesting to me because it treats an agent as a working system, not a prompt demo.
 
-The pieces that matter are the boring ones: sessions, tools, memory, search, and the boundaries between local state and model calls. If those parts are visible, the system becomes easier to trust and easier to extend.
+What matters to me is not whether it can talk, but whether it can work reliably: are sessions traceable, are tool calls visible, can state be recovered, can long tasks continue?
 
-That is the kind of software I want to keep building around.
+If those parts are visible, the system becomes easier to trust and easier to debug. That is where BitFun matters, not in a clever-looking chat box.

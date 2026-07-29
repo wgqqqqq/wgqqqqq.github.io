@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: Notes on Sparo OS
-description: A short note on the desktop-level direction behind Sparo OS.
-tags: [Sparo OS, desktop, systems]
+title: How the three BitFun capabilities split up
+description: Where Code Agent, Cowork Agent, and Computer Use fit in BitFun.
+tags: [BitFun, agents, desktop]
 permalink: /en/notes/notes-on-sparo-os/
 ---
 
-Sparo OS points at a larger question: what does a useful agent look like when it lives on the desktop instead of in a chat window?
+In BitFun, I prefer to split the capabilities apart.
 
-The answer probably involves persistent context, clear app boundaries, and the ability to move between code, coordination, and routine work without losing the thread.
+Code Agent handles editing, planning, debugging, and testing inside repositories. Cowork Agent is closer to collaboration, docs, and knowledge work. Computer Use handles the actions that really need the desktop.
 
-That is the part of the problem space I find worth following.
+If these are mixed together, the system gets hard to reason about. Split apart, BitFun starts to look like a runtime that can grow over time instead of a shell that tries to do everything.

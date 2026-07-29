@@ -1,15 +1,15 @@
 ---
 layout: post
 lang: zh
-title: 为什么把主页改成 blog
-description: 记录为什么从展示型主页改成写作优先的站点。
-tags: [site, writing, blog]
+title: BitFun 需要的不是展示页，而是持续记录
+description: 站点改成 blog，是为了更好地记录 BitFun 相关工作的判断。
+tags: [BitFun, notes, blog]
 ---
 
-我不太需要一个很大的 landing page。
+我不太需要一个很大的展示页。
 
-真正需要的是一个能持续写东西的地方：记录 agent runtime 在真实使用里的行为，什么样的桌面工具是有用的，以及为什么本地优先的界面仍然值得做。
+真正需要的是一个能持续写东西的地方：把 BitFun 里遇到的判断、取舍和实现细节记录下来，避免它们只停留在脑子里或临时聊天里。
 
-所以这个站点现在先按 blog 来组织。首页放最近文章，关于页放短简介、当前工作和公开链接。
+BitFun 不是一个单点功能，而是一组要长期协作的能力：Code Agent、Cowork Agent、Computer Use、memory、长任务执行和桌面工作流。这个站点更适合围绕这些主题慢慢写。
 
-这比堆一个“看起来像简历”的单页更直接，也更容易长期维护。
+所以我把站点改成 blog-first。首页放最近思考，关于页放短简介，其他内容围绕 BitFun 展开。

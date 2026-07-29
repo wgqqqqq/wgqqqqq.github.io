@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: On local-first interfaces
-description: A note on why visible state and local context keep winning.
-tags: [UI, local-first, interfaces]
+title: Why BitFun defaults to local-first
+description: A note on local state, traceable behavior, and desktop workflows.
+tags: [BitFun, local-first, interfaces]
 permalink: /en/notes/on-local-first-interfaces/
 ---
 
-I keep coming back to local-first interfaces because they age better.
+I keep coming back to local-first because BitFun deals with things that are not one-shot answers.
 
-When state is visible, a tool is easier to debug. When data stays close to the user, the interaction is often calmer. When the interface shows the current state plainly, people spend less time guessing what the system is doing.
+Long tasks need state. State needs to land somewhere. Once it lands, it becomes possible to debug, recover, and reuse. That is a better fit for an agent runtime than pushing everything into a remote black box.
 
-That is a good default for tooling, and probably a good default for most software that has to earn trust.
+That is why I want computer use, the filesystem, the terminal, and the browser to live in one visible local workspace, so the system's actions and next steps stay clear.
