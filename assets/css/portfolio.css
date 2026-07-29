@@ -280,7 +280,7 @@ a {
 }
 
 .portfolio-main {
-  width: min(calc(100% - 40px), var(--content));
+  width: min(calc(100% - 40px), 1040px);
   margin: 0 auto;
 }
 
@@ -288,18 +288,28 @@ a {
   position: relative;
   display: grid;
   min-height: 100svh;
-  grid-template-columns: minmax(0, 1fr) 184px;
-  gap: 38px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  grid-template-areas:
+    "content media"
+    "console console";
+  gap: 48px 56px;
   align-items: center;
   padding: 126px 0 86px;
 }
 
+.hero-content {
+  grid-area: content;
+  max-width: 620px;
+}
+
 .hero-media {
+  grid-area: media;
+  justify-self: end;
   align-self: center;
 }
 
 .hero-media img {
-  width: 184px;
+  width: min(100%, 280px);
   aspect-ratio: 1;
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -335,10 +345,13 @@ p {
 
 h1 {
   margin: 0;
-  font-size: clamp(56px, 11vw, 112px);
-  line-height: 0.9;
-  font-weight: 760;
+  font-size: clamp(56px, 8vw, 108px);
+  line-height: 0.92;
+  font-weight: 780;
+  max-width: 6.2ch;
   letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 h2 {
@@ -416,11 +429,9 @@ h3 {
 }
 
 .agent-console {
-  position: absolute;
-  right: 0;
-  bottom: 22px;
+  grid-area: console;
   display: grid;
-  width: min(100%, 470px);
+  width: min(100%, 560px);
   grid-template-columns: auto 1fr auto;
   gap: 12px;
   align-items: center;
@@ -681,6 +692,10 @@ h3 {
   .hero-section {
     min-height: 100svh;
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "media"
+      "content"
+      "console";
     gap: 24px;
     align-content: center;
     padding: 110px 0 102px;
