@@ -1,12 +1,13 @@
 ---
 layout: post
-title: Notes on Sparo OS
-description: A short note on the desktop-level direction behind Sparo OS.
+lang: zh
+title: 关于 Sparo OS 的一点笔记
+description: 记录我对桌面级 agent 方向的理解。
 tags: [Sparo OS, desktop, systems]
 ---
 
-Sparo OS points at a larger question: what does a useful agent look like when it lives on the desktop instead of in a chat window?
+Sparo OS 指向的是一个更大的问题：如果 agent 不只是活在聊天窗口里，而是长期存在于桌面环境中，它应该长什么样？
 
-The answer probably involves persistent context, clear app boundaries, and the ability to move between code, coordination, and routine work without losing the thread.
+我现在的判断是，它需要持久上下文、清晰的应用边界，以及在代码、协作和日常任务之间切换时不丢失线索的能力。
 
-That is the part of the problem space I find worth following.
+这类问题不一定会被一个漂亮的聊天框解决，但很值得持续跟下去。

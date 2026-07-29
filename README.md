@@ -1,12 +1,12 @@
-# Guanqi's Blog
+# Guanqi | 笔记
 
-This repository contains my personal GitHub Pages blog.
+这个仓库是个人 GitHub Pages 站点。默认中文，英文版在 `/en/`。
 
-Build locally:
+本地构建：
 
 ```bash
 bundle install --path vendor/bundle
 bundle exec jekyll serve
 ```
 
-The homepage source lives in `index.html` and `_layouts/blog.html`.
+主页入口在 `index.html` 和 `en/index.html`，核心布局在 `_layouts/blog.html`。

@@ -123,6 +123,18 @@ a:hover {
   color: var(--ink);
 }
 
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.lang-switch {
+  display: inline-flex;
+  gap: 10px;
+  padding-left: 8px;
+  margin-left: 4px;
+  border-left: 1px solid var(--rule);
+}
+
 .home-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 292px;
@@ -212,10 +224,7 @@ p {
 }
 
 .section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 18px;
+  display: block;
 }
 
 .section-head h2,

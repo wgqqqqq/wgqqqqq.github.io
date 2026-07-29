@@ -1,7 +1,7 @@
 {
   "short_name": "Guanqi",
-  "name": "Guanqi | Notes",
-  "description": "Guanqi's personal blog about agentic software systems, developer tools, and local-first interfaces.",
+  "name": "Guanqi | 笔记",
+  "description": "Guanqi 的个人博客，记录 agentic software、开发工具和本地优先界面的思考。",
   "icons": [
     {
       "src": "/assets/images/guanqi.png",

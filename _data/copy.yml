@@ -1,0 +1,66 @@
+zh:
+  tagline: 关注 agentic software、开发工具和本地优先界面的写作
+  nav_home: 首页
+  nav_about: 关于我
+  nav_latest: 最近文章
+  nav_github: GitHub
+  nav_lang_zh: 中文
+  nav_lang_en: EN
+  home_kicker: 独立工程师
+  home_title: 写给 agentic software 与本地优先工具的笔记
+  home_lede: 我会记录在构建软件时学到的东西：agent runtimes、桌面工具、接口设计，以及让复杂系统变得可见的方法。
+  latest_kicker: 最近写作
+  latest_title: 最近文章与笔记
+  notes_kicker: 我关注的主题
+  notes_title: 这些主题会影响写作
+  page_kicker: 个人简介
+  current_work: 当前工作
+  current_work_value: BitFun / Sparo OS
+  focus: 关注方向
+  focus_value: agent runtimes、桌面 AI、开放系统
+  about_more: 阅读简介
+  about_label: 关于我
+  contact_label: 公开联系
+  contact_body: GitHub 是最直接的入口。
+  back_home: 返回首页
+  post_tags: 标签
+  topics:
+    - title: agent runtimes
+      detail: 关注会话、工具、记忆和协议边界，让 agent 更可预测。
+    - title: 开发者界面
+      detail: 关注把状态、日志和上下文显式暴露出来的桌面界面。
+    - title: 开放系统
+      detail: 偏好可扩展、可检查、可重组的公开组件。
+en:
+  tagline: Writing about agentic software, developer tools, and local-first interfaces.
+  nav_home: Home
+  nav_about: About me
+  nav_latest: Latest notes
+  nav_github: GitHub
+  nav_lang_zh: 中文
+  nav_lang_en: EN
+  home_kicker: Independent engineer
+  home_title: Notes on agentic software and local-first tools
+  home_lede: "I write about what I learn while building software: agent runtimes, desktop tools, interface design, and ways to make complex systems visible."
+  latest_kicker: Latest writing
+  latest_title: Recent posts and notes
+  notes_kicker: What I pay attention to
+  notes_title: Themes that shape the writing
+  page_kicker: Profile
+  current_work: Current work
+  current_work_value: BitFun / Sparo OS
+  focus: Focus
+  focus_value: agent runtimes, desktop AI, open systems
+  about_more: Read the bio
+  about_label: About me
+  contact_label: Public contact
+  contact_body: GitHub is the cleanest place to follow the work and start a conversation.
+  back_home: Back to home
+  post_tags: Tags
+  topics:
+    - title: Agent runtimes
+      detail: "Sessions, tools, memory, and protocol boundaries that keep agents predictable."
+    - title: Developer interfaces
+      detail: "Desktop surfaces that expose state, logs, and context instead of flattening them."
+    - title: Open systems
+      detail: "Public components that are easier to extend, inspect, and recombine."

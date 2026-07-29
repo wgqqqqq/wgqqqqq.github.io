@@ -1,12 +1,13 @@
 ---
 layout: post
-title: On local-first interfaces
-description: A note on why visible state and local context keep winning.
+lang: zh
+title: 为什么我还是偏好本地优先界面
+description: 一点关于可见状态、本地上下文和信任感的笔记。
 tags: [UI, local-first, interfaces]
 ---
 
-I keep coming back to local-first interfaces because they age better.
+我一直会回到本地优先界面这个方向，因为它们通常更耐用。
 
-When state is visible, a tool is easier to debug. When data stays close to the user, the interaction is often calmer. When the interface shows the current state plainly, people spend less time guessing what the system is doing.
+状态可见时，工具更容易调试；数据离用户更近时，交互通常更稳定；界面清楚展示当前状态时，人就不用一直猜系统到底在做什么。
 
-That is a good default for tooling, and probably a good default for most software that has to earn trust.
+对工具软件来说，这是一种很好的默认值。对任何需要获得信任的软件来说，大概也一样。

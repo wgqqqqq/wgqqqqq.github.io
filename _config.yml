@@ -1,10 +1,10 @@
 title: Guanqi
-SEOTitle: Guanqi | Notes
-description: "Guanqi's personal blog about agentic software systems, developer tools, and local-first interfaces."
-keyword: "Guanqi, wgqqqqq, AI agents, agentic software, developer tools, Rust, TypeScript, Tauri"
+SEOTitle: Guanqi | 笔记
+description: "Guanqi 的个人博客，记录 agentic software、开发工具和本地优先界面的思考。"
+keyword: "Guanqi, wgqqqqq, AI agents, agentic software, 开发工具, 本地优先, Rust, TypeScript, Tauri"
 url: "https://wgqqqqq.github.io"
 baseurl: ""
-lang: en
+lang: zh
 timezone: Asia/Shanghai
 
 future: true
