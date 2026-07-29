@@ -4,29 +4,31 @@ lang: zh
 title: 关于我
 seo_title: 关于我 | Guanqi
 permalink: /about/
-description: "Guanqi 的简短介绍、BitFun 相关工作和公开链接。"
+description: "Guanqi 的简短介绍：本地 AI 开发基础设施、BitFun、flashgrep 和 agent runtime。"
 ---
 
-<p>我是 Guanqi，一名独立工程师。现在主要围绕 BitFun 做事：把 Code Agent、Cowork Agent 和 Computer Use 这些能力接到一个可持续的 desktop runtime 里。</p>
+<p>我是 Guanqi，关注本地优先的 AI 开发工具和 agent runtime。我的工作不是只做一个聊天界面，而是把 agent 真正在工程环境里需要的基础能力做扎实：搜索、索引、状态、工具调用、长任务和桌面集成。</p>
 
-<p>我更在意的是运行时本身：会话、工具、记忆、状态、调试和长任务执行要能看见、能追踪、能复用。BitFun 吸引我的地方，就是它不是一个演示壳子，而是一个真的要拿来干活的系统。</p>
+<p>目前工作重心在 BitFun。我关心的是 agent 怎么在真实 workspace 里持续工作：代码仓库怎么搜、上下文怎么恢复、工具调用怎么追踪、长任务怎么中断后继续，以及 desktop runtime 怎么承载这些能力。</p>
 
-<p>这个站点会以 blog 为主，记录我在 BitFun 相关工作里学到的东西：怎么拆分能力、怎么接入桌面工作流、以及怎么让 agent 的行为更可控。</p>
+<p>另一条线是 flashgrep。它是一个面向大型 Git worktree 的本地 regex 预筛索引系统：先用字符级倒排索引召回候选，再做精确 regex 验证。这个项目更能代表我对“agent 工具链基础设施”的理解：速度、正确性、增量状态和对外协议都要一起成立。</p>
 
-<h2>当前工作</h2>
+<h2>当前主线</h2>
 <ul>
-  <li>BitFun</li>
+  <li>BitFun：desktop-grade agent runtime 和 agent app 工作面。</li>
+  <li>flashgrep：给 agent 和大型仓库使用的本地搜索 / 索引基础设施。</li>
 </ul>
 
 <h2>关注方向</h2>
 <ul>
-  <li>Code Agent：计划、调试、测试、长任务执行</li>
-  <li>Cowork / Office：调研、文档、PPT、会议纪要</li>
-  <li>Desktop runtime：computer use、browser、filesystem、terminal</li>
+  <li>Agent runtime：会话、工具、memory、状态、调试和长任务执行。</li>
+  <li>Workspace search：regex 预筛索引、base snapshot、published overlay、daemon 协议。</li>
+  <li>Local work surfaces：filesystem、terminal、browser、computer use 如何组成一个可控的工作面。</li>
 </ul>
 
 <h2>链接</h2>
 <ul>
   <li><a href="https://github.com/wgqqqqq" target="_blank" rel="noopener">GitHub</a></li>
   <li><a href="https://openbitfun.com/" target="_blank" rel="noopener">BitFun</a></li>
+  <li><a href="https://github.com/wgqqqqq/flashgrep" target="_blank" rel="noopener">flashgrep</a></li>
 </ul>

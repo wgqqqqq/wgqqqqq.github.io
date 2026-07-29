@@ -73,6 +73,64 @@
           </div>
         </aside>
 
+        <section class="work-block" aria-labelledby="work-title">
+          <div class="section-head section-head--split">
+            <div>
+              <p class="section-kicker">{{ copy.work_kicker }}</p>
+              <h2 id="work-title">{{ copy.work_title }}</h2>
+            </div>
+            <p class="section-note">{{ copy.work_note }}</p>
+          </div>
+
+          <div class="work-grid">
+            {% for work in copy.work_items %}
+              <article class="work-card">
+                <div class="work-card__meta">
+                  <span>{{ work.role }}</span>
+                  <span>{{ work.period }}</span>
+                </div>
+                <h3>{{ work.title }}</h3>
+                <p>{{ work.summary }}</p>
+                {% if work.highlights %}
+                  <ul class="work-highlights">
+                    {% for highlight in work.highlights %}
+                      <li>{{ highlight }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                {% if work.tags %}
+                  <ul class="work-tags" aria-label="{{ work.title }} tags">
+                    {% for tag in work.tags %}
+                      <li>{{ tag }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                {% if work.links %}
+                  <div class="work-links">
+                    {% for link in work.links %}
+                      <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </article>
+            {% endfor %}
+
+            <aside class="proof-card" aria-label="{{ copy.proof_kicker }}">
+              <p class="section-kicker">{{ copy.proof_kicker }}</p>
+              <h3>{{ copy.proof_title }}</h3>
+              <p>{{ copy.proof_body }}</p>
+              <dl class="proof-metrics">
+                {% for item in copy.proof_items %}
+                  <div>
+                    <dt>{{ item.label }}</dt>
+                    <dd>{{ item.value }}</dd>
+                  </div>
+                {% endfor %}
+              </dl>
+            </aside>
+          </div>
+        </section>
+
         <section class="feed-block" id="latest" aria-labelledby="latest-title">
           <div class="section-head">
             <p class="section-kicker">{{ copy.latest_kicker }}</p>

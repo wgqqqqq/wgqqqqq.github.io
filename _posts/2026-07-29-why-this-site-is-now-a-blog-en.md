@@ -1,16 +1,16 @@
 ---
 layout: post
 lang: en
-title: BitFun needs notes, not a showcase page
-description: I turned the site into a blog so I could keep track of BitFun-related decisions.
-tags: [BitFun, notes, blog]
-permalink: /en/notes/why-this-site-is-now-a-blog/
+title: My current position
+description: I work on local-first agent developer infrastructure, not just a product page.
+tags: [position, agent runtime, search]
+permalink: /en/notes/position/
 ---
 
-I do not need a large showcase page.
+I am not just building a product page. I work on local-first infrastructure for agentic developer tools.
 
-What I actually want is a place to keep track of the decisions, tradeoffs, and implementation details that come up around BitFun.
+The important parts are not demos. They are the underlying capabilities: large-repo search, regex prefilter indexing, workspace state, tool execution, long-task recovery, and the desktop runtime that has to hold all of that together.
 
-BitFun is not a single feature. It is a set of capabilities that need to work together over time: Code Agent, Cowork Agent, Computer Use, memory, long-task execution, and desktop workflows.
+BitFun is the product surface I am currently focused on. flashgrep is the lower-level line of work that exists to make agent search fast enough in real codebases.
 
-That is a better fit for a blog-first site. The homepage can point at recent notes, the bio page can stay short, and the rest can stay centered on BitFun.
+That is why this site should read like a writing entry point, not a showcase page.

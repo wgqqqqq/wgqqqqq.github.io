@@ -1,7 +1,7 @@
 title: Guanqi
-SEOTitle: Guanqi | BitFun 笔记
-description: "Guanqi 的个人博客，主要记录 BitFun 相关的工作、判断和实现细节。"
-keyword: "Guanqi, wgqqqqq, BitFun, Code Agent, Cowork Agent, Computer Use, Rust, TypeScript, Tauri"
+SEOTitle: Guanqi | 本地 agent 开发基础设施
+description: "Guanqi 的个人主页，关注本地 agent 开发基础设施、BitFun 和 flashgrep。"
+keyword: "Guanqi, wgqqqqq, BitFun, flashgrep, agent runtime, regex indexing, Rust, TypeScript, Tauri"
 url: "https://wgqqqqq.github.io"
 baseurl: ""
 lang: zh

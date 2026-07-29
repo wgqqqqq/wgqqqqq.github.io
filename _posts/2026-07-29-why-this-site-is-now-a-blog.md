@@ -1,15 +1,16 @@
 ---
 layout: post
 lang: zh
-title: BitFun 需要的不是展示页，而是持续记录
-description: 站点改成 blog，是为了更好地记录 BitFun 相关工作的判断。
-tags: [BitFun, notes, blog]
+title: 我现在的定位
+description: 我做的是本地优先的 agent 开发基础设施，而不只是一个产品页面。
+tags: [position, agent runtime, search]
+permalink: /notes/position/
 ---
 
-我不太需要一个很大的展示页。
+我更准确的定位，不是“做一个产品界面的人”，而是做本地优先的 agent 开发基础设施。
 
-真正需要的是一个能持续写东西的地方：把 BitFun 里遇到的判断、取舍和实现细节记录下来，避免它们只停留在脑子里或临时聊天里。
+这条线里最重要的东西不是演示效果，而是基础能力：大仓库搜索、regex 预筛索引、workspace 状态、工具执行、长任务恢复，以及桌面 runtime 该如何把这些东西接住。
 
-BitFun 不是一个单点功能，而是一组要长期协作的能力：Code Agent、Cowork Agent、Computer Use、memory、长任务执行和桌面工作流。这个站点更适合围绕这些主题慢慢写。
+BitFun 是我现在主要投入的产品工作；flashgrep 则是更底层的一条线，专门解决 agent 在真实代码仓库里搜索太慢的问题。
 
-所以我把站点改成 blog-first。首页放最近思考，关于页放短简介，其他内容围绕 BitFun 展开。
+所以这个站点最后应该长成一个写作入口，而不是一个展示页。
