@@ -1,14 +1,12 @@
 ---
-
 import { getEntry, render } from "astro:content";
 import Markdown from "@components/misc/Markdown.astro";
-import I18nKey from "../i18n/i18nKey";
-import { i18n } from "../i18n/translation";
-import MainGridLayout from "../layouts/MainGridLayout.astro";
-import { siteConfig } from "@/config";
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
 
+const lang = "en";
 const aboutPost = await getEntry("spec", "about");
-const lang = siteConfig.lang;
 
 if (!aboutPost) {
 	throw new Error("About page content not found");

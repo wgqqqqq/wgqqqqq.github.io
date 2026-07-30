@@ -38,11 +38,15 @@ const map: { [key: string]: Translation } = {
 	tr_tr: tr,
 };
 
-export function getTranslation(lang: string): Translation {
-	return map[lang.toLowerCase()] || defaultTranslation;
+export function normalizeLang(lang?: string): string {
+	const value = (lang || siteConfig.lang || "en").toLowerCase();
+	return value.replace("-", "_");
 }
 
-export function i18n(key: I18nKey): string {
-	const lang = siteConfig.lang || "en";
-	return getTranslation(lang)[key];
+export function getTranslation(lang: string): Translation {
+	return map[normalizeLang(lang)] || defaultTranslation;
+}
+
+export function i18n(key: I18nKey, lang?: string): string {
+	return getTranslation(lang || siteConfig.lang)[key];
 }

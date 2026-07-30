@@ -91,10 +91,13 @@ export type BlogPostData = {
 	draft?: boolean;
 	image?: string;
 	category?: string;
+	lang?: string;
 	prevTitle?: string;
 	prevSlug?: string;
+	prevLang?: string;
 	nextTitle?: string;
 	nextSlug?: string;
+	nextLang?: string;
 };
 
 export type ExpressiveCodeConfig = {

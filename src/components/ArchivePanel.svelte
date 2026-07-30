@@ -5,15 +5,6 @@ import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import { getPostUrlBySlug } from "../utils/url-utils";
 
-export let tags: string[];
-export let categories: string[];
-export let sortedPosts: Post[] = [];
-
-const params = new URLSearchParams(window.location.search);
-tags = params.has("tag") ? params.getAll("tag") : [];
-categories = params.has("category") ? params.getAll("category") : [];
-const uncategorized = params.get("uncategorized");
-
 interface Post {
 	slug: string;
 	data: {
@@ -29,7 +20,14 @@ interface Group {
 	posts: Post[];
 }
 
-let groups: Group[] = [];
+let { sortedPosts = [], lang = "zh_CN" } = $props<{ sortedPosts?: Post[]; lang?: string }>();
+
+const params = new URLSearchParams(window.location.search);
+const tags = params.has("tag") ? params.getAll("tag") : [];
+const categories = params.has("category") ? params.getAll("category") : [];
+const uncategorized = params.get("uncategorized");
+
+let groups = $state<Group[]>([]);
 
 function formatDate(date: Date) {
 	const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -99,13 +97,13 @@ onMount(async () => {
                     ></div>
                 </div>
                 <div class="w-[70%] md:w-[80%] transition text-left text-50">
-                    {group.posts.length} {i18n(group.posts.length === 1 ? I18nKey.postCount : I18nKey.postsCount)}
+                    {group.posts.length} {i18n(group.posts.length === 1 ? I18nKey.postCount : I18nKey.postsCount, lang)}
                 </div>
             </div>
 
             {#each group.posts as post}
                 <a
-                        href={getPostUrlBySlug(post.slug)}
+                        href={getPostUrlBySlug(post.slug, post.data.lang || lang)}
                         aria-label={post.data.title}
                         class="group btn-plain !block h-10 w-full rounded-lg hover:text-[initial]"
                 >

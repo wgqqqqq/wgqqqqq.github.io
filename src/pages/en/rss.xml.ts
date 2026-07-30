@@ -17,7 +17,7 @@ function stripInvalidXmlChars(str: string): string {
 }
 
 export async function GET(context: APIContext) {
-	const lang = siteConfig.lang;
+	const lang = "en";
 	const blog = await getSortedPosts(lang);
 
 	return rss({
@@ -38,6 +38,6 @@ export async function GET(context: APIContext) {
 				}),
 			};
 		}),
-		customData: `<language>${lang.replace("_", "-")}</language>`,
+		customData: `<language>${lang}</language>`,
 	});
 }

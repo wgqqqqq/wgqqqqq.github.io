@@ -1,12 +1,18 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import I18nKey from "@i18n/i18nKey";
-import { i18n } from "@i18n/translation";
+import { i18n, normalizeLang } from "@i18n/translation";
 import { getCategoryUrl } from "@utils/url-utils.ts";
 
 // // Retrieve posts and sort them by publication date
-async function getRawSortedPosts() {
+function isVisibleInLang(postLang?: string, lang?: string) {
+	if (!postLang || postLang.trim() === "") return true;
+	return normalizeLang(postLang) === normalizeLang(lang);
+}
+
+async function getRawSortedPosts(lang?: string) {
 	const allBlogPosts = await getCollection("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return (import.meta.env.PROD ? data.draft !== true : true) &&
+			isVisibleInLang(data.lang, lang);
 	});
 
 	const sorted = allBlogPosts.sort((a, b) => {
@@ -17,16 +23,18 @@ async function getRawSortedPosts() {
 	return sorted;
 }
 
-export async function getSortedPosts() {
-	const sorted = await getRawSortedPosts();
+export async function getSortedPosts(lang?: string) {
+	const sorted = await getRawSortedPosts(lang);
 
 	for (let i = 1; i < sorted.length; i++) {
 		sorted[i].data.nextSlug = sorted[i - 1].slug;
 		sorted[i].data.nextTitle = sorted[i - 1].data.title;
+		sorted[i].data.nextLang = sorted[i - 1].data.lang;
 	}
 	for (let i = 0; i < sorted.length - 1; i++) {
 		sorted[i].data.prevSlug = sorted[i + 1].slug;
 		sorted[i].data.prevTitle = sorted[i + 1].data.title;
+		sorted[i].data.prevLang = sorted[i + 1].data.lang;
 	}
 
 	return sorted;
@@ -35,8 +43,8 @@ export type PostForList = {
 	slug: string;
 	data: CollectionEntry<"posts">["data"];
 };
-export async function getSortedPostsList(): Promise<PostForList[]> {
-	const sortedFullPosts = await getRawSortedPosts();
+export async function getSortedPostsList(lang?: string): Promise<PostForList[]> {
+	const sortedFullPosts = await getRawSortedPosts(lang);
 
 	// delete post.body
 	const sortedPostsList = sortedFullPosts.map((post) => ({
@@ -51,9 +59,10 @@ export type Tag = {
 	count: number;
 };
 
-export async function getTagList(): Promise<Tag[]> {
+export async function getTagList(lang?: string): Promise<Tag[]> {
 	const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return (import.meta.env.PROD ? data.draft !== true : true) &&
+			isVisibleInLang(data.lang, lang);
 	});
 
 	const countMap: { [key: string]: number } = {};
@@ -78,14 +87,15 @@ export type Category = {
 	url: string;
 };
 
-export async function getCategoryList(): Promise<Category[]> {
+export async function getCategoryList(lang?: string): Promise<Category[]> {
 	const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return (import.meta.env.PROD ? data.draft !== true : true) &&
+			isVisibleInLang(data.lang, lang);
 	});
 	const count: { [key: string]: number } = {};
 	allBlogPosts.forEach((post: { data: { category: string | null } }) => {
 		if (!post.data.category) {
-			const ucKey = i18n(I18nKey.uncategorized);
+			const ucKey = i18n(I18nKey.uncategorized, lang);
 			count[ucKey] = count[ucKey] ? count[ucKey] + 1 : 1;
 			return;
 		}
@@ -107,7 +117,7 @@ export async function getCategoryList(): Promise<Category[]> {
 		ret.push({
 			name: c,
 			count: count[c],
-			url: getCategoryUrl(c),
+			url: getCategoryUrl(c, lang),
 		});
 	}
 	return ret;

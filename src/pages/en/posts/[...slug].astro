@@ -1,5 +1,6 @@
 ---
 import path from "node:path";
+import { Icon } from "astro-icon/components";
 import License from "@components/misc/License.astro";
 import Markdown from "@components/misc/Markdown.astro";
 import I18nKey from "@i18n/i18nKey";
@@ -7,15 +8,13 @@ import { i18n } from "@i18n/translation";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getSortedPosts } from "@utils/content-utils";
 import { getDir, getPostUrlBySlug } from "@utils/url-utils";
-import { Icon } from "astro-icon/components";
-import { licenseConfig } from "src/config";
-import ImageWrapper from "../../components/misc/ImageWrapper.astro";
-import PostMetadata from "../../components/PostMeta.astro";
-import { profileConfig, siteConfig } from "../../config";
-import { formatDateToYYYYMMDD } from "../../utils/date-utils";
+import { licenseConfig, profileConfig } from "@/config";
+import ImageWrapper from "@components/misc/ImageWrapper.astro";
+import PostMetadata from "@components/PostMeta.astro";
+import { formatDateToYYYYMMDD } from "@utils/date-utils";
 
 export async function getStaticPaths() {
-	const blogEntries = await getSortedPosts(siteConfig.lang);
+	const blogEntries = await getSortedPosts("en");
 	return blogEntries.map((entry) => ({
 		params: { slug: entry.slug },
 		props: { entry },
@@ -23,7 +22,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const lang = entry.data.lang || siteConfig.lang;
+const lang = entry.data.lang || "en";
 const { Content, headings } = await entry.render();
 
 const { remarkPluginFrontmatter } = await entry.render();
@@ -41,16 +40,12 @@ const jsonLd = {
 	},
 	datePublished: formatDateToYYYYMMDD(entry.data.published),
 	inLanguage: lang.replace("_", "-"),
-	// TODO include cover image here
 };
 ---
 <MainGridLayout banner={entry.data.image} title={entry.data.title} description={entry.data.description} lang={lang} setOGTypeArticle={true} headings={headings}>
     <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative mb-4">
-        <div id="post-container" class:list={["card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full ",
-            {}
-        ]}>
-            <!-- word count and reading time -->
+        <div id="post-container" class:list={["card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full ", {}]}>
             <div class="flex flex-row text-black/30 dark:text-white/30 gap-5 mb-3 transition onload-animation">
                 <div class="flex flex-row items-center">
                     <div class="transition h-6 w-6 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center mr-2">
@@ -68,7 +63,6 @@ const jsonLd = {
                 </div>
             </div>
 
-            <!-- title -->
             <div class="relative onload-animation">
                 <div
                     data-pagefind-body data-pagefind-weight="10" data-pagefind-meta="title"
@@ -82,7 +76,6 @@ const jsonLd = {
                 </div>
             </div>
 
-            <!-- metadata -->
             <div class="onload-animation">
                 <PostMetadata
                         class="mb-5"
@@ -95,19 +88,15 @@ const jsonLd = {
                 {!entry.data.image && <div class="border-[var(--line-divider)] border-dashed border-b-[1px] mb-5"></div>}
             </div>
 
-            <!-- always show cover as long as it has one -->
-
             {entry.data.image &&
                 <ImageWrapper id="post-cover" src={entry.data.image} basePath={path.join("content/posts/", getDir(entry.id))} class="mb-8 rounded-xl banner-container onload-animation"/>
             }
-
 
             <Markdown class="mb-6 markdown-content onload-animation">
                 <Content />
             </Markdown>
 
             {licenseConfig.enable && <License title={entry.data.title} slug={entry.slug} pubDate={entry.data.published} lang={lang} class="mb-6 rounded-xl license-container onload-animation"></License>}
-
         </div>
     </div>
 
